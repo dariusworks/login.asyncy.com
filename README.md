@@ -1,4 +1,4 @@
-# login
+# Λsyncy Login
 
 ## Project setup
 ```

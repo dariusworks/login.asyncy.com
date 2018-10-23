@@ -17,6 +17,12 @@ export default new Router({
       path: '/success',
       name: 'success',
       component: () => import('@/views/Success')
+    },
+    {
+      path: '*',
+      redirect: {
+        name: 'home'
+      }
     }
   ]
 })
