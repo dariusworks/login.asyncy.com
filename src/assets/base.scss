@@ -1,1 +1,85 @@
+@import "~@asyncy/vue/dist/asyncy-vue.css";
 @import "~@asyncy/vue/dist/sass/index";
+
+html {
+  scroll-behavior: smooth;
+}
+
+a { text-decoration: none; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  min-height: 100vh;
+}
+
+body {
+  &.no-overflow {
+    overflow: hidden !important;
+  }
+}
+
+* {
+  font-family: 'gilroy', 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: inherit;
+  position: relative;
+}
+
+#asyncy {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: color(light);
+  min-height: 100vh;
+  height: auto;
+  padding: 0;
+  margin: 0;
+
+  h1, h1 > * { font-size: 3.25rem; @include breakpoint(max m) { font-size: 2rem; } @include breakpoint(max l) { font-size: 2.5rem; } }
+  h2, h2 > * { font-size: 2.5rem; @include breakpoint(max m) { font-size: 1.7rem; } @include breakpoint(max l) { font-size: 2rem; } }
+  h3, h3 > * { font-size: 1.7rem; @include breakpoint(max m) { font-size: 1.2rem; } @include breakpoint(max l) { font-size: 1.5rem; } }
+  h4, h4 > * { font-size: 1.2rem; @include breakpoint(max m) { font-size: 1rem; } @include breakpoint(max l) { font-size: 1.1rem; } }
+
+  h1, h2, h3, h4, h5, h6 {
+    &.light {
+      font-weight: 400;
+      b {
+        font-weight: 600;
+      }
+    }
+
+    &:not(.light) {
+      font-weight: 600;
+    }
+  }
+
+  .section {
+    color: color(dark);
+    z-index: 2;
+    display: block;
+    height: auto;
+    position: relative;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+
+    .container {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      z-index: 10;
+      text-align: center;
+
+      &.full-width {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
