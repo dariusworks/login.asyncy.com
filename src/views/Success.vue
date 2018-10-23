@@ -5,7 +5,7 @@
     <div class="head text--center">
       <h2>Welcome to Asyncy, {{ name }}!</h2>
       <h4 class="light">You're all set! Check the terminal where you executed <pre class="code">$ asyncy login</pre></h4>
-      <a-button state="primary" size="l">Deploy your first app <font-awesome-icon icon="rocket" size="lg" /></a-button>
+      <a-button state="primary" size="l" @click="redirect">Deploy your first app <font-awesome-icon icon="rocket" size="lg" /></a-button>
       <h4 class="light">Time to write your story.</h4>
     </div>
     <a-foot />
@@ -20,6 +20,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    }
+  },
+  methods: {
+    redirect: function () {
+      window.location = 'https://docs.asyncy.com/quick-start/#write-your-first-story'
     }
   }
 }
