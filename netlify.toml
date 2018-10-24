@@ -10,18 +10,8 @@
   force = true
 
 [[redirects]]
-  from = "http://login-asyncy.netlify.com/"
-  to = "https://login.asyncy.com/"
-  force = true
-
-[[redirects]]
   from = "https://login-asyncy.netlify.com/*"
   to = "https://login.asyncy.com/:splat"
-  force = true
-
-[[redirects]]
-  from = "https://login-asyncy.netlify.com/"
-  to = "https://login.asyncy.com/"
   force = true
 
 [[redirects]]
