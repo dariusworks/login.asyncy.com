@@ -132,6 +132,7 @@ export default {
           .reverse { visibility: visible; }
         }
         .reverse {
+          z-index: 2;
           visibility: hidden;
           top: -40px;
           transform: rotate(180deg)
@@ -139,6 +140,7 @@ export default {
       }
     }
     .rocket {
+      z-index: 3;
       position: relative;
       display: inline-block;
     }
