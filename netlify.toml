@@ -10,8 +10,18 @@
   status = 301
 
 [[redirects]]
+  from = "http://login-asyncy.netlify.com/"
+  to = "https://login.asyncy.com/"
+  status = 301
+
+[[redirects]]
   from = "https://login-asyncy.netlify.com/*"
   to = "https://login.asyncy.com/:splat"
+  status = 301
+
+[[redirects]]
+  from = "https://login-asyncy.netlify.com/"
+  to = "https://login.asyncy.com/"
   status = 301
 
 [[redirects]]
