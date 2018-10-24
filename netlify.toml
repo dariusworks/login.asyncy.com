@@ -1,10 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  query = { name = ":name" }
-
-[[redirects]]
   from = "http://login-asyncy.netlify.com/*"
   to = "https://login.asyncy.com/:splat"
   force = true
@@ -18,3 +12,9 @@
   from = "http://login.asyncy.com/*"
   to = "https://login.asyncy.com/:splat"
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  query = { name = ":name" }
