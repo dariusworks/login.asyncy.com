@@ -101,7 +101,8 @@ export default {
 
     .moon {
       @include breakpoint(max s) { background-size: 200% 100% }
-      // background-position: 50% 0;
+      background-size: 100%;
+      background-position: 50% 0;
       position: absolute;
       max-width: 100%;
       top: 8rem;
@@ -117,7 +118,7 @@ export default {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      bottom: 12rem;
+      bottom: 10rem;
 
       .rockets {
         top: 240px;
