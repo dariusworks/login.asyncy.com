@@ -4,6 +4,7 @@
     effect="dark"
     logo="light"
     type="dark"
+    transparent
     class="topnav"
     tag="Beta"
     tag-state="yellow"

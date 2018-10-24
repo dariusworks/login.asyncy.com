@@ -5,7 +5,7 @@
     <div class="head text--center">
       <h2>Welcome to Asyncy, {{ name }}!</h2>
       <h4 class="light">You're all set! Check the terminal where you executed <pre class="code">$ asyncy login</pre></h4>
-      <a-button state="primary" size="l" @click="redirect">Deploy your first app <font-awesome-icon icon="rocket" size="lg" /></a-button>
+      <a-button class="shadow" state="primary" size="l" @click="redirect">Deploy your first app</a-button>
       <h4 class="light">Time to write your story.</h4>
     </div>
     <a-foot />
@@ -43,6 +43,17 @@ export default {
         background-color: rgba($black, 0.3);
         padding: .5rem .75rem;
         border-radius: .25rem;
+      }
+    }
+    .shadow {
+      @include bg-gradient(state(primary));
+      box-shadow: 0 4px 5px 0px rgba(0, 0, 0, 0.1);
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.3);
+      }
+      &:active {
+        @include bg-gradient-inverted(state(primary));
       }
     }
   }

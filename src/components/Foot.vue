@@ -1,9 +1,15 @@
 <template>
   <div class="foot">
-    <a-planet
-      absolute
-      class="moon"
-      variant="cyan" />
+    <div class="scene">
+      <a-planet
+        absolute
+        class="moon"
+        variant="moon" />
+      <div class="surface">
+        <a-rocket ref="rocket" :class="[{launch: launched}]" @click.native="launched = true" />
+        <a-astronaut />
+      </div>
+    </div>
     <div class="footer columns center">
       <div class="column"><a-link href="#">About</a-link></div>
       <div class="column"><a-link href="#">Contact</a-link></div>
@@ -17,7 +23,10 @@
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data: () => ({
+    launched: undefined
+  })
 }
 </script>
 
@@ -44,7 +53,16 @@ export default {
       padding-bottom: 0.25rem;
       @include breakpoint(max s) { padding: 0.25rem .5rem }
       & + .column {
-        border-left: 1px solid black;
+        &:before {
+          content: '·';
+          display: block;
+          position: absolute;
+          left: -2px;
+          top: 0;
+          font-weight: bold;
+          font-size: 1.3rem;
+          color: color(dark);
+        }
         @include breakpoint(max s) { border-color: color(light) }
       }
       p {
@@ -57,7 +75,7 @@ export default {
     }
   }
 
-  .moon {
+  .scene {
     @include breakpoint(max s) { display: none; }
     z-index: 0;
     position: absolute;
@@ -65,11 +83,57 @@ export default {
     right: 0;
     margin: auto;
     bottom: 0;
-    background-size: 250% 250%;
-    background-position: 50% 0%;
     max-width: 100%;
     width: 1200px;
-    height: 250px;
+    height: 400px;
+
+    .moon {
+      position: absolute;
+      bottom: 0;
+      background-size: 250% 250%;
+      background-position: 50% 0%;
+      max-width: 100%;
+      width: 1200px;
+      height: 250px;
+    }
+    .surface {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      bottom: 10rem;
+    }
+    .rocket {
+      position: relative;
+      display: inline-block;
+      animation: rocketLaunch 2.5s linear;
+      animation-play-state: paused;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      &.launch {
+        animation-play-state: running;
+      }
+    }
+    .astronaut {
+      position: relative;
+      display: inline-block;
+    }
   }
+}
+
+@keyframes rocketLaunch {
+  1% { transform: translate3d(0, 0, 0) }
+  3% { transform: translate3d(10px, 0, 0 ) }
+  6% { transform: translate3d(0px, 3px, 0 ) }
+  9% { transform: translate3d(-10px, -2px, 0 ) }
+  14% { transform: translate3d(6px, -5px, 1px ) }
+  28% { transform: translate3d(-6px, -45px, 3px ) }
+  41% { transform: translate3d(0px, -80px, 8px ) }
+  75% { transform: translate3d(0px, -50vh, 10px ) }
+  100% { transform: translate3d(0px, -100vh, 0px ) }
 }
 </style>
