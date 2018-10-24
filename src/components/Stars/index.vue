@@ -13,7 +13,6 @@
     <StarTwo />
     <StarThree />
     <StarFour />
-    <title>stars background</title>
     <g>
       <template v-for="star of stars">
         <template v-for="(s, index) of star.items">

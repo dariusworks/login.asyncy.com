@@ -2,7 +2,6 @@
   <div class="foot">
     <div class="scene">
       <a-planet
-        absolute
         class="moon"
         variant="moon" />
       <div class="surface">
@@ -32,7 +31,8 @@ export default {
 
 <style lang="scss" scoped>
 .foot {
-  position: absolute;
+  position: relative;
+  min-height: 40rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -40,12 +40,17 @@ export default {
 
   .built {
     @include breakpoint(max s) { color: color(light) }
-    color: color(dark)
+    color: color(dark);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .footer.columns {
     @include breakpoint(max s) { flex-direction: row }
-    position: relative;
+    position: absolute;
+    bottom: 2rem;
     .column {
       margin-right: 0;
       margin-left: 0;
@@ -89,12 +94,10 @@ export default {
 
     .moon {
       position: absolute;
-      bottom: 0;
-      background-size: 250% 250%;
-      background-position: 50% 0%;
       max-width: 100%;
+      top: 8rem;
       width: 1200px;
-      height: 250px;
+      height: 600px;
     }
     .surface {
       position: absolute;
@@ -105,7 +108,7 @@ export default {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      bottom: 10rem;
+      top: 0;
     }
     .rocket {
       position: relative;
@@ -114,7 +117,9 @@ export default {
       animation-play-state: paused;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
+      cursor: help;
       &.launch {
+        cursor: not-allowed;
         animation-play-state: running;
       }
     }

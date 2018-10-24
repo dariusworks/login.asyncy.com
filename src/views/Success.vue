@@ -33,27 +33,30 @@ export default {
 <style lang="scss" scoped>
 .success {
   background-color: color(dark);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
   .head {
     padding: 3rem 2rem;
     z-index: 50;
     pre {
       &.code {
         display: inline-block;
-        background-color: rgba($black, 0.3);
+        background-color: gray(900);
         padding: .5rem .75rem;
         border-radius: .25rem;
       }
     }
     .shadow {
-      @include bg-gradient(state(primary));
+      background-color: state(primary);
+      font-weight: bold;
       box-shadow: 0 4px 5px 0px rgba(0, 0, 0, 0.1);
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.3);
-      }
-      &:active {
-        @include bg-gradient-inverted(state(primary));
+        box-shadow: 0 6px 8px 0px rgba(0, 0, 0, 0.3);
+        background-color: darken(state(primary), 2%);
       }
     }
   }
