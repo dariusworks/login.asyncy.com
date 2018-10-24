@@ -141,6 +141,6 @@ export default {
   28% { transform: translate3d(-6px, -45px, 3px ) }
   41% { transform: translate3d(0px, -80px, 8px ) }
   75% { transform: translate3d(0px, -50vh, 10px ) }
-  100% { transform: translate3d(0px, -100vh, 0px ) }
+  100% { transform: translate3d(0px, -1500px, 0px ) }
 }
 </style>
