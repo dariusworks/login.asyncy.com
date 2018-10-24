@@ -5,7 +5,14 @@
         class="moon"
         variant="moon" />
       <div class="surface">
-        <a-rocket ref="rocket" :class="[{launch: launched}]" @click.native="launched = true" />
+        <div class="rockets" :class="[{launch: launched}]">
+          <a-rocket @click.native="launched = true" />
+          <div class="reverse">
+            <div class="jetwrapper jetanim">
+              <div class="jet" />
+            </div>
+          </div>
+        </div>
         <a-astronaut />
       </div>
     </div>
@@ -93,7 +100,7 @@ export default {
     height: 400px;
 
     .moon {
-      @include breakpoint(max s) { background-size: 200% 100%; }
+      @include breakpoint(max s) { background-size: 200% 100% }
       // background-position: 50% 0;
       position: absolute;
       max-width: 100%;
@@ -111,19 +118,29 @@ export default {
       align-items: flex-end;
       justify-content: center;
       bottom: 12rem;
+
+      .rockets {
+        top: 240px;
+        animation: rocketLaunch 2.5s linear;
+        animation-play-state: paused;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        cursor: help;
+        &.launch {
+          cursor: not-allowed;
+          animation-play-state: running;
+          .reverse { visibility: visible; }
+        }
+        .reverse {
+          visibility: hidden;
+          top: -40px;
+          transform: rotate(180deg)
+        }
+      }
     }
     .rocket {
       position: relative;
       display: inline-block;
-      animation: rocketLaunch 2.5s linear;
-      animation-play-state: paused;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      cursor: help;
-      &.launch {
-        cursor: not-allowed;
-        animation-play-state: running;
-      }
     }
     .astronaut {
       position: relative;

@@ -1,6 +1,31 @@
 <template>
   <div class="success">
     <a-stars />
+    <div class="comets">
+      <a-comet
+        animated
+        absolute
+        variant="green"
+        :delay="10"
+        style="top: -30%; left: 40%" />
+      <a-comet
+        animated
+        absolute
+        variant="red"
+        :delay="15"
+        style="top: -30%; left: 70%" />
+      <a-comet
+        animated
+        absolute
+        variant="blue"
+        :delay="20"
+        style="top: -30%; right: -20%" />
+      <a-comet
+        animated
+        absolute
+        variant="purple"
+        style="top: -30%; left: 20%" />
+    </div>
     <a-navbar />
     <div class="head text--center">
       <h2>Welcome to Asyncy, {{ name }}!</h2>
@@ -39,6 +64,7 @@ export default {
   justify-content: flex-start;
   align-items: stretch;
   overflow: hidden;
+  .comets { position: absolute; top: 0; left: 0; right: 0; bottom: 0 }
   .head {
     padding: 3rem 2rem;
     z-index: 50;
