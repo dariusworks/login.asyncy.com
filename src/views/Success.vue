@@ -80,6 +80,7 @@ export default {
       background-color: state(primary);
       font-weight: bold;
       box-shadow: 0 4px 5px 0px rgba(0, 0, 0, 0.1);
+      transition: all .1s ease-in;
       &:hover, &:active {
         transform: scale(1.025);
         box-shadow: 0 6px 8px 0px rgba(0, 0, 0, 0.3);
