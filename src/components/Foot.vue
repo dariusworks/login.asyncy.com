@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .foot {
   position: relative;
-  min-height: 40rem;
+  min-height: 30rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -81,7 +81,7 @@ export default {
   }
 
   .scene {
-    @include breakpoint(max s) { display: none; }
+    // @include breakpoint(max s) { display: none; }
     z-index: 0;
     position: absolute;
     left: 0;
@@ -93,6 +93,8 @@ export default {
     height: 400px;
 
     .moon {
+      @include breakpoint(max s) { background-size: 200% 100%; }
+      // background-position: 50% 0;
       position: absolute;
       max-width: 100%;
       top: 8rem;
@@ -108,7 +110,7 @@ export default {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      top: 0;
+      bottom: 12rem;
     }
     .rocket {
       position: relative;
