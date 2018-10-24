@@ -6,7 +6,9 @@
         variant="moon" />
       <div class="surface">
         <div class="rockets" :class="[{launch: launched}]">
-          <a-rocket @click.native="launched = true" />
+          <div class="rocket-container">
+            <a-rocket @click.native="launched = true" />
+          </div>
           <div class="reverse">
             <div class="jetwrapper jetanim">
               <div class="jet" />
@@ -131,6 +133,7 @@ export default {
           cursor: not-allowed;
           animation-play-state: running;
           .reverse { visibility: visible; }
+          .rocket-container::before { animation: rocketLaunchShadow 2.5s linear; animation-play-state: running; animation-iteration-count: 1; animation-fill-mode: forwards; }
         }
         .reverse {
           z-index: 2;
@@ -138,6 +141,22 @@ export default {
           top: -40px;
           transform: rotate(180deg)
         }
+      }
+    }
+    .rocket-container {
+      &::before {
+        content: '';
+        z-index: 1;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        width: 60%;
+        height: 30px;
+        background-color: rgba(gray(600), 0.25);
+        border-radius: 100%;
       }
     }
     .rocket {
@@ -162,5 +181,16 @@ export default {
   41% { transform: translate3d(0px, -80px, 8px ) }
   75% { transform: translate3d(0px, -50vh, 10px ) }
   100% { transform: translate3d(0px, -1500px, 0px ) }
+}
+@keyframes rocketLaunchShadow {
+  1% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
+  3% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
+  6% { opacity: 0.99; transform: translate3d(0, -3px, 0 ) }
+  9% { opacity: 0.99; transform: translate3d(-10px, 2px, 0 ) }
+  14% { opacity: 0.92; transform: translate3d(6px, 5px, 0 ) }
+  28% { opacity: 0.7; transform: translate3d(-6px, 45px, 3px ) }
+  41% { opacity: 0.3; transform: translate3d(0, 80px, 20px ) }
+  75% { opacity: 0.0; transform: translate3d(0, 50vh, 20px ) }
+  100% { opacity: 0.0; transform: translate3d(0, 1500px, 20px ) }
 }
 </style>
