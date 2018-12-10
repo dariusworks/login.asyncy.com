@@ -18,7 +18,8 @@ export default new Router({
       name: 'success',
       component: () => import('@/views/Success'),
       props: (route) => ({
-        name: route.query.name
+        name: route.query.name,
+        beta: route.query.beta === 'true'
       })
     },
     {

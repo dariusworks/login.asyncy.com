@@ -48,7 +48,6 @@ export default {
   z-index: 3;
 
   .built {
-    @include breakpoint(max s) { color: color(light) }
     color: color(dark);
     position: absolute;
     left: 0;
@@ -84,7 +83,7 @@ export default {
       }
       a {
         color: color(dark);
-        @include breakpoint(max s) { font-size: fontSize(s); color: color(light) }
+        @include breakpoint(max s) { font-size: fontSize(s) }
       }
     }
   }
@@ -171,37 +170,37 @@ export default {
   }
 }
 
-@keyframes rocketLaunch {
-  1% { transform: translate3d(0, 0, 0) }
-  3% { transform: translate3d(10px, 0, 0 ) }
-  6% { transform: translate3d(0px, 3px, 0 ) }
-  9% { transform: translate3d(-10px, -2px, 0 ) }
-  14% { transform: translate3d(6px, -5px, 1px ) }
-  28% { transform: translate3d(-6px, -45px, 3px ) }
-  41% { transform: translate3d(0px, -80px, 8px ) }
-  45% { transform: translate3d(0px, -50vh, 10px ) }
-  50% { transform: translate3d(0px, -1500px, 0px ) }
-  51% { transform: rotate(45deg) translate3d(-880%, 400%, 0) }
-  52% { transform: rotate(45deg) translate3d(-880%, 400%, 0) }
-  63% { transform: rotate(45deg) translate3d(80%, 400%, 0) }
-  75% { transform: rotate(80deg) translate3d(-180%, -30%, 0) }
-  100% { transform: rotate(90deg) translate3d(-180%, -600%, 0) }
-}
+// @keyframes rocketLaunch {
+//   1% { transform: translate3d(0, 0, 0) }
+//   3% { transform: translate3d(10px, 0, 0 ) }
+//   6% { transform: translate3d(0px, 3px, 0 ) }
+//   9% { transform: translate3d(-10px, -2px, 0 ) }
+//   14% { transform: translate3d(6px, -5px, 1px ) }
+//   28% { transform: translate3d(-6px, -45px, 3px ) }
+//   41% { transform: translate3d(0px, -80px, 8px ) }
+//   45% { transform: translate3d(0px, -50vh, 10px ) }
+//   50% { transform: translate3d(0px, -1500px, 0px ) }
+//   51% { transform: rotate(45deg) translate3d(-880%, 400%, 0) }
+//   52% { transform: rotate(45deg) translate3d(-880%, 400%, 0) }
+//   63% { transform: rotate(45deg) translate3d(80%, 400%, 0) }
+//   75% { transform: rotate(80deg) translate3d(-180%, -30%, 0) }
+//   100% { transform: rotate(90deg) translate3d(-180%, -600%, 0) }
+// }
 
-@keyframes rocketLaunchShadow {
-  1% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
-  3% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
-  6% { opacity: 0.99; transform: translate3d(0, -3px, 0 ) }
-  9% { opacity: 0.99; transform: translate3d(-10px, 2px, 0 ) }
-  14% { opacity: 0.92; transform: translate3d(6px, 5px, 0 ) }
-  28% { opacity: 0.7; transform: translate3d(-6px, 45px, 3px ) }
-  41% { opacity: 0.3; transform: translate3d(0, 80px, 20px ) }
-  45% { opacity: 0.0; transform: translate3d(0, 50vh, 20px ) }
-  50% { opacity: 0.0; transform: translate3d(0, 1500px, 20px ) }
-  100% { opacity: 0.0; transform: translate3d(0, 1500px, 20px ) }
-}
+// @keyframes rocketLaunchShadow {
+//   1% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
+//   3% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
+//   6% { opacity: 0.99; transform: translate3d(0, -3px, 0 ) }
+//   9% { opacity: 0.99; transform: translate3d(-10px, 2px, 0 ) }
+//   14% { opacity: 0.92; transform: translate3d(6px, 5px, 0 ) }
+//   28% { opacity: 0.7; transform: translate3d(-6px, 45px, 3px ) }
+//   41% { opacity: 0.3; transform: translate3d(0, 80px, 20px ) }
+//   45% { opacity: 0.0; transform: translate3d(0, 50vh, 20px ) }
+//   50% { opacity: 0.0; transform: translate3d(0, 1500px, 20px ) }
+//   100% { opacity: 0.0; transform: translate3d(0, 1500px, 20px ) }
+// }
 
-@keyframes rocketLaunchEasy  {
+@keyframes rocketLaunch  {
   1% { transform: translate3d(0, 0, 0) }
   3% { transform: translate3d(10px, 0, 0 ) }
   6% { transform: translate3d(0px, 3px, 0 ) }
@@ -213,7 +212,7 @@ export default {
   100% { transform: translate3d(0px, -1500px, 0px ) }
 }
 
-@keyframes rocketLaunchShadowEasy {
+@keyframes rocketLaunchShadow {
   1% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
   3% { opacity: 1; transform: translate3d(10px, 0, 0 ) }
   6% { opacity: 0.99; transform: translate3d(0, -3px, 0 ) }

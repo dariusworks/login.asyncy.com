@@ -55,9 +55,6 @@ export default {
         { x: 21, y: 42 },
         { x: 8, y: 25 },
         { x: 67, y: 54, mobile: true },
-        { x: 95, y: 78, mobile: true },
-        { x: 83, y: 17, mobile: true },
-        { x: 3, y: 6, mobile: true },
         { x: 70, y: 23, mobile: true }
       ]
     }, {
@@ -68,10 +65,6 @@ export default {
         { x: 72, y: 57 },
         { x: 85, y: 53, mobile: true },
         { x: 14, y: 54, mobile: true },
-        { x: 65, y: 73 },
-        { x: 96, y: 64, mobile: true },
-        { x: 17, y: 37, mobile: true },
-        { x: 23, y: 74, mobile: true },
         { x: 84, y: 5, mobile: true },
         { x: 52, y: 20 },
         { x: 24, y: 15, mobile: true }
@@ -83,11 +76,7 @@ export default {
       items: [
         { x: 90, y: 67 },
         { x: 10, y: 90 },
-        { x: 80, y: 30 },
         { x: 32, y: 22, mobile: true },
-        { x: 7, y: 74, mobile: true },
-        { x: 82.4, y: 43, mobile: true },
-        { x: 71, y: 47, mobile: true },
         { x: 6, y: 12, mobile: true },
         { x: 65, y: 52, mobile: true }
       ]
@@ -97,15 +86,10 @@ export default {
       height: 10,
       items: [
         { x: 6, y: 96 },
-        { x: 90, y: 34 },
         { x: 52, y: 22, mobile: true },
         { x: 48, y: 34, mobile: true },
         { x: 12, y: 47, mobile: true },
-        { x: 89, y: 49, mobile: true },
-        { x: 70, y: 20, mobile: true },
-        { x: 87, y: 34, mobile: true },
-        { x: 90, y: 12, mobile: true },
-        { x: 72, y: 52, mobile: true }
+        { x: 89, y: 49, mobile: true }
       ]
     }]
   })
