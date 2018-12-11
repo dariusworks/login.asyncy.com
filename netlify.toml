@@ -18,3 +18,15 @@
   to = "/index.html"
   status = 200
   query = { name = ":name", beta = ":beta" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  query = { name = ":name" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  query = { beta = ":beta" }
